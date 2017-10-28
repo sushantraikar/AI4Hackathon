@@ -61,8 +61,8 @@ function sendMessage(event){
     console.log('Recieved message from ' + number + ' saying \'' + message  + '\'');
 
     var conversation = new ConversationV1({
-      username: '706a0266-ddae-4133-8e01-9d589a920c49',
-      password: 'YkLWjbqFKfFz',
+      username: '',
+      password: '',
       version_date: ConversationV1.VERSION_DATE_2017_05_26
     });
 
@@ -94,7 +94,7 @@ function sendMessage(event){
 
          request({
                   url: 'https://graph.facebook.com/v2.6/me/messages',
-                  qs: {access_token: "EAAVlwJI4kZBkBAPvUYPKdugYpzZBjpgz0WLE1enppSWzSCyFmeR6Drb3izXNkxeuYzfLnYhF8qIkXztXJLYX8KZAnBCAAYWLZAz6WymzIn5VJTKHK29QsOpWwZCVEIm2nmh8htsuuZCR6Qley5jgN2W5vSMecu2lfnCRaiOlyuVwZDZD"},
+                  qs: {access_token: ""},
                   method: 'POST',
                   json: {
                     recipient: {id: number},
@@ -132,8 +132,8 @@ app.get("/api/smssent", function (req, res) {
   console.log('Recieved message from ' + number + ' saying \'' + message  + '\'');
 
   var conversation = new ConversationV1({
-    username: '706a0266-ddae-4133-8e01-9d589a920c49',
-    password: 'YkLWjbqFKfFz',
+    username: '',
+    password: '',
     version_date: ConversationV1.VERSION_DATE_2017_05_26
   });
 
@@ -142,7 +142,7 @@ app.get("/api/smssent", function (req, res) {
 
   conversation.message({
     input: { text: message },
-    workspace_id: 'c64ea171-ef58-4252-b790-1a1daf2cb96f',
+    workspace_id: '',
     context: context
    }, function(err, response) {
        if (err) {
@@ -164,8 +164,8 @@ app.get("/api/smssent", function (req, res) {
          }
 
          var client = require('twilio')(
-           'AC1e6d2bf200bef314bfd70ada02778119',
-           '93eb18b472b8b169d8573981095869ad'
+           '',
+           ''
          );
 
          client.messages.create({
